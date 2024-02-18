@@ -14,8 +14,6 @@
         }
 
         .photo-tile {
-            width: 200px; /* Adjust the width as per your preference */
-            height: 200px; /* Adjust the height as per your preference */
             overflow: hidden;
             margin: 10px;
             border-radius: 8px;
@@ -33,10 +31,14 @@
             transform: scale(1.1);
         }
     </style>
-    <title>Random Photo Tile Gallery</title>
+    <title>Random Sized Photo Tile Gallery</title>
 </head>
 <body>
     <script>
+        function getRandomSize(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -55,6 +57,11 @@
             photoTile.className = "photo-tile";
 
             const imageElement = document.createElement("img");
+            const randomWidth = getRandomSize(150, 300); // Adjust the range as per your preference
+            const randomHeight = getRandomSize(150, 300);
+            imageElement.style.width = `${randomWidth}px`;
+            imageElement.style.height = `${randomHeight}px`;
+
             imageElement.src = `${imageFolder}/${imageName}`;
             imageElement.alt = `Image ${imageName.split(".")[0]}`;
 
