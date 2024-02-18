@@ -15,7 +15,7 @@
 
         .photo-tile {
             overflow: hidden;
-            margin: 5px; /* Adjust the margin as per your preference */
+            margin: 5px; /* Adjust the margin to reduce gaps */
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -25,6 +25,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            display: block; /* Remove extra space below inline-block elements */
         }
 
         .photo-tile:hover img {
