@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Leaflet Map</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha512-xGeT+F+V4r+r2C9W29dG9Ay7M7QkBmK1H/1855r15YfEhD1u67T/LfW/aPJvBmI385q/L16zR/Qp9T7w" crossorigin="" referrerpolicy="no-referrer" />
-</head>
-<body>
-<div id="map" style="height: 400px"></div>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 0;
+            padding: 0;
+        }
 
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-yICi+v3r85tJfX3yI8u/V5qP8nb0367bK1N+yYrK+jEO0yR793sV67jt+tU0pO5o9x9799tH+b1q6c" crossorigin="" referrerpolicy="no-referrer"></script>
-<script>
-var map = L.map('map').setView([51.505, -0.09], 13); // Replace coordinates and zoom as needed
+        .photo-tile {
+            width: 200px; /* Adjust the width as per your preference */
+            height: 200px; /* Adjust the height as per your preference */
+            overflow: hidden;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+        .photo-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-// Add markers, popups, lines, etc. as needed
-</script>
-</body>
-</html>
+        .photo-tile:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+				<title>Photo Tile Gallery</title>
+			</head>
+			<body>
+				<!-- Loop through photos 1 to 100 in the "Baby_shoot" folder -->
+				<?php
+    $imageFolder = "Baby_shoot";
+
+    for ($i = 1; $i <= 100; $i++) {
+        echo '
+				<div class="photo-tile">';
+        echo '
+					<img src="' . $imageFolder . '/' . $i . '.jpg" alt="Image ' . $i . '">';
+        echo '
+					</div>';
+    }
+    ?>
+				</body>
+			</html>
