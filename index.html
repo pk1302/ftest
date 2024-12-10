@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Share My Podcast</title>
+    <title>Work Tracker</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
+        table {
+            border-collapse: collapse;
+            width: 100%;
         }
 
-        header {
-            text-align: center;
-            padding: 20px 0;
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
         }
 
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
 
-        .share-buttons p {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .share-buttons a {
-            margin: 0 10px;
-        }
-
-        .share-buttons img {
-            width: 30px; /* Adjust the width as needed */
-        }
-
-        @media (max-width: 768px) {
-            .share-buttons {
-                flex-direction: column;
-            }
+        th {
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="PS_logo_white.png" alt="Your Podcast Logo"> </header>
-    <div class="share-buttons">
-        <p>Share this podcast:</p>
-        <a href="https://open.spotify.com/show/1oi4aViJhNCZOqXyfoAIlP?si=jJ8dCF6pT3CG2mYoATic6w" target="_blank" rel="noopener noreferrer">
-            <img src="spotify-logo-png-file-spotify-badge-large-png-1280.png" alt="Spotify">
-        </a>
-        </div>
+
+<h2>Work Tracker</h2>
+
+<table>
+    <tr>
+        <th>Work</th>
+        <th>Status</th>
+        <th>Notes</th>
+        <th>Responsible</th>
+        <th>Due Date</th>
+    </tr>
+    <tr>
+        <td>Task 1</td>
+        <td>In Progress</td>
+        <td>Need to complete unit testing.</td>
+        <td>John Doe</td>
+        <td>2023-12-15</td>
+    </tr>
+    <tr>
+        <td>Task 2</td>
+        <td>Completed</td>
+        <td>Successfully deployed to production.</td>
+        <td>Jane Smith</td>
+        <td>2023-12-10</td>
+    </tr>
+    <tr>
+        <td>Task 3</td>
+        <td>Pending</td>
+        <td>Awaiting design approval.</td>
+        <td>Mike Johnson</td>
+        <td>2023-12-20</td>
+    </tr>
+</table>
+
 </body>
 </html>
