@@ -10,3 +10,23 @@
     <img src="google-podcast-logo.png" alt="Google Podcasts" />
   </a>
   </div>
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-buttons p {
+    margin-bottom: 10px;
+}
+
+.share-buttons a {
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .share-buttons {
+        flex-direction: column;
+    }
+}
