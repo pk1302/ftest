@@ -1,74 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: flex-start;
-            margin: 0;
-            padding: 0;
-        }
-
-        .photo-tile {
-            overflow: hidden;
-            margin: 5px; /* Adjust the margin to reduce gaps */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .photo-tile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            display: block; /* Remove extra space below inline-block elements */
-        }
-
-        .photo-tile:hover img {
-            transform: scale(1.1);
-        }
-    </style>
-    <title>Random Sized Photo Tile Gallery</title>
-</head>
-<body>
-    <script>
-        function getRandomSize(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-
-        const imageFolder = "Baby_shoot";
-        const numberOfImages = 10;
-        const imageArray = Array.from({ length: numberOfImages }, (_, index) => `${index + 1}.jpg`);
-
-        shuffleArray(imageArray);
-
-        imageArray.forEach((imageName) => {
-            const photoTile = document.createElement("div");
-            photoTile.className = "photo-tile";
-
-            const imageElement = document.createElement("img");
-            const randomWidth = getRandomSize(150, 300); // Adjust the range as per your preference
-            const randomHeight = getRandomSize(150, 300);
-            imageElement.style.width = `${randomWidth}px`;
-            imageElement.style.height = `${randomHeight}px`;
-
-            imageElement.src = `${imageFolder}/${imageName}`;
-            imageElement.alt = `Image ${imageName.split(".")[0]}`;
-
-            photoTile.appendChild(imageElement);
-            document.body.appendChild(photoTile);
-        });
-    </script>
-</body>
-</html>
+<div class="share-buttons">
+  <p>Share this podcast:</p>
+  <a href="https://open.spotify.com/show/your_spotify_show_id" target="_blank" rel="noopener noreferrer">
+    <img src="spotify-logo.png" alt="Spotify" />
+  </a>
+  <a href="https://podcasts.apple.com/us/podcast/your_apple_podcast_id" target="_blank" rel="noopener noreferrer">
+    <img src="apple-podcast-logo.png" alt="Apple Podcasts" />
+  </a>
+  <a href="https://www.google.com/podcasts?feed=https://your_podcast_rss_feed" target="_blank" rel="noopener noreferrer">
+    <img src="google-podcast-logo.png" alt="Google Podcasts" />
+  </a>
+  </div>
