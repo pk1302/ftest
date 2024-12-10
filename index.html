@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Work Tracker</title>
+    <title>Editable Work Tracker</title>
     <style>
         table {
             border-collapse: collapse;
@@ -22,11 +22,15 @@
             background-color: #4CAF50;
             color: white;
         }
+
+        td[contenteditable] {
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
 
-<h2>Work Tracker</h2>
+<h2>Editable Work Tracker</h2>
 
 <table>
     <tr>
@@ -37,25 +41,25 @@
         <th>Due Date</th>
     </tr>
     <tr>
-        <td>Task 1</td>
-        <td>In Progress</td>
-        <td>Need to complete unit testing.</td>
-        <td>John Doe</td>
-        <td>2023-12-15</td>
+        <td contenteditable>Task 1</td>
+        <td contenteditable>In Progress</td>
+        <td contenteditable>Need to complete unit testing.</td>
+        <td contenteditable>John Doe</td>
+        <td contenteditable>2023-12-15</td>
     </tr>
     <tr>
-        <td>Task 2</td>
-        <td>Completed</td>
-        <td>Successfully deployed to production.</td>
-        <td>Jane Smith</td>
-        <td>2023-12-10</td>
+        <td contenteditable>Task 2</td>
+        <td contenteditable>Completed</td>
+        <td contenteditable>Successfully deployed to production.</td>
+        <td contenteditable>Jane Smith</td>
+        <td contenteditable>2023-12-10</td>
     </tr>
     <tr>
-        <td>Task 3</td>
-        <td>Pending</td>
-        <td>Awaiting design approval.</td>
-        <td>Mike Johnson</td>
-        <td>2023-12-20</td>
+        <td contenteditable>Task 3</td>
+        <td contenteditable>Pending</td>
+        <td contenteditable>Awaiting design approval.</td>
+        <td contenteditable>Mike Johnson</td>
+        <td contenteditable>2023-12-20</td>
     </tr>
 </table>
 
